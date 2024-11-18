@@ -1,6 +1,7 @@
 import discord
 from psw import gen_pass
 from coin import flip_coin
+from yo import alejo
 
 # La variable intents almacena los privilegios del bot
 intents = discord.Intents.default()
@@ -26,6 +27,8 @@ async def on_message(message):
         await message.channel.send(gen_pass(8))
     elif message.content.startswith('$coin'):
         await message.channel.send(flip_coin())
+    elif message.content.startswith('$alejo'):
+        await message.channel.send(alejo())
     else:
         await message.channel.send(message.content)
 
